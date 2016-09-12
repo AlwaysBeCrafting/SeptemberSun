@@ -18,7 +18,17 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+		int base03 = Solarized.BASE03;
+		int r = (base03 & 0x00ff0000) >> 16;
+		int g = (base03 & 0x0000ff00) >> 8;
+		int b = (base03 & 0x000000ff);
+
+		Gdx.gl.glClearColor(
+				(1 / 255f) * r,
+				(1 / 255f) * g,
+				(1 / 255f) * b,
+				1
+		);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(img, 0, 0);
