@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package stream.alwaysbecrafting.septembersun;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
