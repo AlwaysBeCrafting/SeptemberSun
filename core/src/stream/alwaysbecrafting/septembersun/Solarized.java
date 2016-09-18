@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package stream.alwaysbecrafting.septembersun;
 
 
 public abstract class Solarized {

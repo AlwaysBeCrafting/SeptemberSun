@@ -1,4 +1,4 @@
-package com.mygdx.game.component;
+package stream.alwaysbecrafting.septembersun.component;
 
 import com.badlogic.gdx.graphics.Texture;
 

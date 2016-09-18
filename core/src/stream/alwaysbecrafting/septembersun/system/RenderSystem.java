@@ -1,4 +1,4 @@
-package com.mygdx.game.system;
+package stream.alwaysbecrafting.septembersun.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.systems.IteratingSystem;
