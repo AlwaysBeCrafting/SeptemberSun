@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.ApplicationAdapter;
 
 import stream.alwaysbecrafting.septembersun.system.RenderSystem;
+import stream.alwaysbecrafting.septembersun.system.SpriteRenderSystem;
 
 
 //==============================================================================
@@ -20,6 +21,7 @@ public class SeptemberSun extends ApplicationAdapter {
 		engine = new Engine();
 
 		engine.addSystem( new RenderSystem() );
+		engine.addSystem( SpriteRenderSystem.create() );
 	}
 
 	//--------------------------------------------------------------------------
