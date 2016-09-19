@@ -1,5 +1,6 @@
 package stream.alwaysbecrafting.septembersun.system;
 
+import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -17,6 +18,9 @@ import stream.alwaysbecrafting.septembersun.util.Log;
 //==============================================================================
 public class PlayerInputSystem extends IteratingSystem implements InputProcessor {
 	//--------------------------------------------------------------------------
+
+	private final ComponentMapper<PlayerControllerComponent> CONTROLLER_MAPPER;
+	private final ComponentMapper<PositionComponent> POSITION_MAPPER;
 
 	private final Set<Integer> KEYS_PRESSED  = new HashSet<>();
 	private final Set<Integer> KEYS_RELEASED = new HashSet<>();
@@ -37,6 +41,9 @@ public class PlayerInputSystem extends IteratingSystem implements InputProcessor
 
 	private PlayerInputSystem( Family family ) {
 		super( family );
+
+		CONTROLLER_MAPPER = ComponentMapper.getFor( PlayerControllerComponent.class );
+		POSITION_MAPPER = ComponentMapper.getFor( PositionComponent.class );
 	}
 
 	//--------------------------------------------------------------------------
@@ -57,6 +64,25 @@ public class PlayerInputSystem extends IteratingSystem implements InputProcessor
 	//--------------------------------------------------------------------------
 
 	@Override protected void processEntity( Entity entity, float deltaTime ) {
+		PlayerControllerComponent controllerComp = CONTROLLER_MAPPER.get( entity );
+		PositionComponent positionComp = POSITION_MAPPER.get( entity );
+
+		if ( KEYS_PRESSED.contains( controllerComp.btn_down )) {
+			positionComp.position.add( 0, -20 );
+		}
+
+		if ( KEYS_PRESSED.contains( controllerComp.btn_up )) {
+			positionComp.position.add( 0, 20 );
+		}
+
+
+		if ( KEYS_PRESSED.contains( controllerComp.btn_left )) {
+			positionComp.position.add( -20, 0 );
+		}
+
+		if ( KEYS_PRESSED.contains( controllerComp.btn_right )) {
+			positionComp.position.add( 20, 0 );
+		}
 	}
 
 	//--------------------------------------------------------------------------
