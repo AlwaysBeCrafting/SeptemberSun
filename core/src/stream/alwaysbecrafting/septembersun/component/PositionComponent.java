@@ -10,5 +10,16 @@ public class PositionComponent implements Component {
 	public Vector2 position = new Vector2();
 
 	//--------------------------------------------------------------------------
+
+	public PositionComponent() {}
+
+	//--------------------------------------------------------------------------
+
+	public PositionComponent( float x, float y ) {
+		position.x = x;
+		position.y = y;
+	}
+
+	//--------------------------------------------------------------------------
 }
 //------------------------------------------------------------------------------

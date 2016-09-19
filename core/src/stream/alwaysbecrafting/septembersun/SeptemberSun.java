@@ -32,7 +32,7 @@ public class SeptemberSun extends ApplicationAdapter {
 
 		Entity e = new Entity();
 
-		e.add( new PositionComponent() );
+		e.add( new PositionComponent( 20, 20 ));
 		e.add( new SpriteComponent( tex ));
 
 		engine.addEntity( e );

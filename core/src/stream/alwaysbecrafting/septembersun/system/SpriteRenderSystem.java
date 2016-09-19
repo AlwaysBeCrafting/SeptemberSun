@@ -1,5 +1,6 @@
 package stream.alwaysbecrafting.septembersun.system;
 
+import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -13,7 +14,10 @@ import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
 public class SpriteRenderSystem extends IteratingSystem {
 	//--------------------------------------------------------------------------
 
-	SpriteBatch batcher;
+	private final ComponentMapper<PositionComponent> POSITION_MAPPER;
+	private final ComponentMapper<SpriteComponent> SPRITE_MAPPER;
+
+	private SpriteBatch batcher;
 
 	//--------------------------------------------------------------------------
 
@@ -30,6 +34,9 @@ public class SpriteRenderSystem extends IteratingSystem {
 
 	private SpriteRenderSystem( Family family ) {
 		super( family );
+
+		POSITION_MAPPER = ComponentMapper.getFor( PositionComponent.class );
+		SPRITE_MAPPER = ComponentMapper.getFor( SpriteComponent.class );
 	}
 
 	//--------------------------------------------------------------------------
@@ -52,7 +59,13 @@ public class SpriteRenderSystem extends IteratingSystem {
 	//--------------------------------------------------------------------------
 
 	@Override protected void processEntity( Entity entity, float deltaTime ) {
-		// batcher.draw( texture, x, y );
+		PositionComponent positionComp = POSITION_MAPPER.get( entity );
+		SpriteComponent spriteComp = SPRITE_MAPPER.get( entity );
+
+		batcher.draw(
+				spriteComp.sprite,
+				positionComp.position.x,
+				positionComp.position.y );
 	}
 
 	//--------------------------------------------------------------------------
