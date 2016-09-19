@@ -1,9 +1,14 @@
 package stream.alwaysbecrafting.septembersun;
 
 import com.badlogic.ashley.core.Engine;
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.graphics.Texture;
 
-import stream.alwaysbecrafting.septembersun.system.RenderSystem;
+import stream.alwaysbecrafting.septembersun.component.PositionComponent;
+import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
+import stream.alwaysbecrafting.septembersun.system.BackgroundRenderSystem;
+import stream.alwaysbecrafting.septembersun.system.SpriteRenderSystem;
 
 
 //==============================================================================
@@ -19,7 +24,18 @@ public class SeptemberSun extends ApplicationAdapter {
 
 		engine = new Engine();
 
-		engine.addSystem( new RenderSystem() );
+		engine.addSystem( new BackgroundRenderSystem() );
+		engine.addSystem( SpriteRenderSystem.create() );
+
+
+		Texture tex = new Texture( "fella.png" );
+
+		Entity e = new Entity();
+
+		e.add( new PositionComponent( 20, 20 ));
+		e.add( new SpriteComponent( tex ));
+
+		engine.addEntity( e );
 	}
 
 	//--------------------------------------------------------------------------
