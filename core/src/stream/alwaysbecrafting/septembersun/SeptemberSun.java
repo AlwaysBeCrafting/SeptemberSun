@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
-import stream.alwaysbecrafting.septembersun.system.RenderSystem;
+import stream.alwaysbecrafting.septembersun.system.BackgroundRenderSystem;
 import stream.alwaysbecrafting.septembersun.system.SpriteRenderSystem;
 
 
@@ -24,7 +24,7 @@ public class SeptemberSun extends ApplicationAdapter {
 
 		engine = new Engine();
 
-		engine.addSystem( new RenderSystem() );
+		engine.addSystem( new BackgroundRenderSystem() );
 		engine.addSystem( SpriteRenderSystem.create() );
 
 
