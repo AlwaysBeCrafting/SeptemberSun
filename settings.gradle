@@ -1,1 +1,3 @@
-include 'desktop', 'core'
+include 'desktop', 'core', 'ecs'
+
+project( ':ecs' ).projectDir = file( '../ecs' )
