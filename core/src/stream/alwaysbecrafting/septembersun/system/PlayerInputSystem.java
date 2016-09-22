@@ -1,71 +1,53 @@
 package stream.alwaysbecrafting.septembersun.system;
 
-import com.badlogic.ashley.core.ComponentMapper;
-import com.badlogic.ashley.core.Engine;
-import com.badlogic.ashley.core.Entity;
-import com.badlogic.ashley.core.Family;
-import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 
 import java.util.HashSet;
 import java.util.Set;
 
+import stream.alwaysbecrafting.ecs.GameEngine;
+import stream.alwaysbecrafting.ecs.system.EntitySystem;
 import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.util.Log;
 
 //==============================================================================
-public class PlayerInputSystem extends IteratingSystem implements InputProcessor {
+public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 	//--------------------------------------------------------------------------
-
-	private final ComponentMapper<PlayerControllerComponent> CONTROLLER_MAPPER;
-	private final ComponentMapper<PositionComponent> POSITION_MAPPER;
 
 	private final Set<Integer> KEYS_PRESSED  = new HashSet<>();
 	private final Set<Integer> KEYS_RELEASED = new HashSet<>();
 
 	//--------------------------------------------------------------------------
 
-	public static PlayerInputSystem create() {
-		Family family = Family
-				.all(
-						PlayerControllerComponent.class,
-						PositionComponent.class )
-				.get();
-
-		return new PlayerInputSystem( family );
+	public PlayerInputSystem() {
+		includeAll(
+				PlayerControllerComponent.class,
+				PositionComponent.class );
 	}
 
 	//--------------------------------------------------------------------------
 
-	private PlayerInputSystem( Family family ) {
-		super( family );
-
-		CONTROLLER_MAPPER = ComponentMapper.getFor( PlayerControllerComponent.class );
-		POSITION_MAPPER = ComponentMapper.getFor( PositionComponent.class );
-	}
-
-	//--------------------------------------------------------------------------
-
-	@Override public void addedToEngine( Engine e ) {
-		super.addedToEngine( e );
+	@Override public void onStart( GameEngine engine ) {
+		super.onStart( engine );
 		Gdx.input.setInputProcessor( this );
 	}
 
 	//--------------------------------------------------------------------------
 
-	@Override public void update( float deltaTime ) {
-		super.update( deltaTime );
+	@Override public void onUpdate( GameEngine engine, float deltaTime ) {
+		super.onUpdate( engine, deltaTime );
+
 		KEYS_PRESSED.clear();
 		KEYS_RELEASED.clear();
 	}
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void processEntity( Entity entity, float deltaTime ) {
-		PlayerControllerComponent controllerComp = CONTROLLER_MAPPER.get( entity );
-		PositionComponent positionComp = POSITION_MAPPER.get( entity );
+	@Override protected void onHandleEntity( GameEngine engine, long entityId, float deltaTime ) {
+		PlayerControllerComponent controllerComp = engine.getComponent( entityId, PlayerControllerComponent.class );
+		PositionComponent positionComp = engine.getComponent( entityId, PositionComponent.class );
 
 		if ( KEYS_PRESSED.contains( controllerComp.btn_down )) {
 			positionComp.position.add( 0, -20 );
