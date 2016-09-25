@@ -1,1 +1,3 @@
-include 'desktop', 'core'
+include 'desktop', 'core', 'flare'
+
+project( ':flare' ).projectDir = file( '../Flare' )

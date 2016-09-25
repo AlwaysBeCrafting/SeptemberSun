@@ -1,10 +1,9 @@
 package stream.alwaysbecrafting.septembersun.component;
 
-import com.badlogic.ashley.core.Component;
 import com.badlogic.gdx.Input;
 
 //==============================================================================
-public class PlayerControllerComponent implements Component {
+public class PlayerControllerComponent {
 	//--------------------------------------------------------------------------
 
 	public int btn_a = Input.Keys.Z;

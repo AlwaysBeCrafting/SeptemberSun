@@ -1,19 +1,20 @@
 package stream.alwaysbecrafting.septembersun.system;
 
-import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
+import stream.alwaysbecrafting.ecs.GameEngine;
+import stream.alwaysbecrafting.ecs.GameSystem;
 import stream.alwaysbecrafting.septembersun.util.Colors;
 
 import static stream.alwaysbecrafting.septembersun.util.Colors.Solarized.BASE03;
 
 //==============================================================================
-public class BackgroundRenderSystem extends EntitySystem {
+public class BackgroundRenderSystem extends GameSystem {
 	//--------------------------------------------------------------------------
 
-	@Override public void update( float deltaTime ) {
-		super.update( deltaTime );
+	@Override public void onUpdate( GameEngine engine, float deltaTime ) {
+		super.onUpdate( engine, deltaTime );
 
 		Gdx.gl.glClearColor(
 				Colors.r( BASE03 ),
