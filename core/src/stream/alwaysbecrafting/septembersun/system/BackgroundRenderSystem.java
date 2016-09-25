@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
 import stream.alwaysbecrafting.ecs.GameEngine;
-import stream.alwaysbecrafting.ecs.system.GameSystem;
+import stream.alwaysbecrafting.ecs.GameSystem;
 import stream.alwaysbecrafting.septembersun.util.Colors;
 
 import static stream.alwaysbecrafting.septembersun.util.Colors.Solarized.BASE03;

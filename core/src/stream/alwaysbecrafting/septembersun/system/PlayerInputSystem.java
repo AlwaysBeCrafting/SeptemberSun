@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import stream.alwaysbecrafting.ecs.GameEngine;
-import stream.alwaysbecrafting.ecs.system.EntitySystem;
+import stream.alwaysbecrafting.ecs.EntitySystem;
 import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.util.Log;
@@ -22,7 +22,7 @@ public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 	//--------------------------------------------------------------------------
 
 	public PlayerInputSystem() {
-		includeAll(
+		requireAll(
 				PlayerControllerComponent.class,
 				PositionComponent.class );
 	}

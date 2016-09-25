@@ -3,7 +3,7 @@ package stream.alwaysbecrafting.septembersun.system;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import stream.alwaysbecrafting.ecs.GameEngine;
-import stream.alwaysbecrafting.ecs.system.EntitySystem;
+import stream.alwaysbecrafting.ecs.EntitySystem;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
 
@@ -16,7 +16,7 @@ public class SpriteRenderSystem extends EntitySystem {
 	//--------------------------------------------------------------------------
 
 	public SpriteRenderSystem() {
-		includeAll(
+		requireAll(
 				PositionComponent.class,
 				SpriteComponent.class );
 	}
