@@ -50,20 +50,20 @@ public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 		PositionComponent positionComp = engine.getComponent( entityId, PositionComponent.class );
 
 		if ( KEYS_PRESSED.contains( controllerComp.btn_down )) {
-			positionComp.position.add( 0, -20 );
+			positionComp.y -= 20;
 		}
 
 		if ( KEYS_PRESSED.contains( controllerComp.btn_up )) {
-			positionComp.position.add( 0, 20 );
+			positionComp.y += 20;
 		}
 
 
 		if ( KEYS_PRESSED.contains( controllerComp.btn_left )) {
-			positionComp.position.add( -20, 0 );
+			positionComp.x -= 20;
 		}
 
 		if ( KEYS_PRESSED.contains( controllerComp.btn_right )) {
-			positionComp.position.add( 20, 0 );
+			positionComp.x += 20;
 		}
 	}
 

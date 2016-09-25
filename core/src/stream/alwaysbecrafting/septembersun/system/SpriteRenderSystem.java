@@ -50,8 +50,8 @@ public class SpriteRenderSystem extends EntitySystem {
 
 		batcher.draw(
 				spriteComp.sprite,
-				positionComp.position.x,
-				positionComp.position.y );
+				positionComp.x,
+				positionComp.y );
 	}
 
 	//--------------------------------------------------------------------------
