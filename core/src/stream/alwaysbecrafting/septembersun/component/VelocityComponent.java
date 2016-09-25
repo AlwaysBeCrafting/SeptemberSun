@@ -1,12 +1,11 @@
 package stream.alwaysbecrafting.septembersun.component;
 
-import com.badlogic.gdx.math.Vector2;
-
 //==============================================================================
 public class VelocityComponent {
 	//--------------------------------------------------------------------------
 
-	Vector2 velocity = new Vector2();
+	public float h;
+	public float v;
 
 	//--------------------------------------------------------------------------
 }
