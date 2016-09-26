@@ -6,8 +6,9 @@ import com.badlogic.gdx.InputProcessor;
 import java.util.HashSet;
 import java.util.Set;
 
-import stream.alwaysbecrafting.ecs.GameEngine;
-import stream.alwaysbecrafting.ecs.EntitySystem;
+import stream.alwaysbecrafting.flare.Entity;
+import stream.alwaysbecrafting.flare.EntitySystem;
+import stream.alwaysbecrafting.flare.GameEngine;
 import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.util.Log;
@@ -45,9 +46,9 @@ public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void onHandleEntity( GameEngine engine, long entityId, float deltaTime ) {
-		PlayerControllerComponent controllerComp = engine.getComponent( entityId, PlayerControllerComponent.class );
-		PositionComponent positionComp = engine.getComponent( entityId, PositionComponent.class );
+	@Override protected void onHandleEntity( Entity entity, float deltaTime ) {
+		PlayerControllerComponent controllerComp = entity.get( PlayerControllerComponent.class );
+		PositionComponent positionComp = entity.get( PositionComponent.class );
 
 		if ( KEYS_PRESSED.contains( controllerComp.btn_down )) {
 			positionComp.y -= 20;
