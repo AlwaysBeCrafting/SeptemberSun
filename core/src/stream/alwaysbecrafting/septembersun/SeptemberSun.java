@@ -3,7 +3,7 @@ package stream.alwaysbecrafting.septembersun;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.Texture;
 
-import stream.alwaysbecrafting.ecs.GameEngine;
+import stream.alwaysbecrafting.flare.GameEngine;
 import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.component.SpriteComponent;

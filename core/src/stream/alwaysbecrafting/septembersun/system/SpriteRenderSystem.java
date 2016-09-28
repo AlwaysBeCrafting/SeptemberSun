@@ -2,8 +2,8 @@ package stream.alwaysbecrafting.septembersun.system;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import stream.alwaysbecrafting.ecs.GameEngine;
-import stream.alwaysbecrafting.ecs.EntitySystem;
+import stream.alwaysbecrafting.flare.EntitySystem;
+import stream.alwaysbecrafting.flare.GameEngine;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
 
