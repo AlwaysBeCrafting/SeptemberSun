@@ -1,12 +1,11 @@
 package stream.alwaysbecrafting.septembersun.component;
 
-import com.badlogic.gdx.math.Vector2;
-
 //==============================================================================
 public class PositionComponent {
 	//--------------------------------------------------------------------------
 
-	public Vector2 position = new Vector2();
+	public float x;
+	public float y;
 
 	//--------------------------------------------------------------------------
 
@@ -15,8 +14,8 @@ public class PositionComponent {
 	//--------------------------------------------------------------------------
 
 	public PositionComponent( float x, float y ) {
-		position.x = x;
-		position.y = y;
+		this.x = x;
+		this.y = y;
 	}
 
 	//--------------------------------------------------------------------------

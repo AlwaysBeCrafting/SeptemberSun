@@ -2,8 +2,9 @@ package stream.alwaysbecrafting.septembersun.system;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import stream.alwaysbecrafting.ecs.GameEngine;
-import stream.alwaysbecrafting.ecs.EntitySystem;
+import stream.alwaysbecrafting.flare.Entity;
+import stream.alwaysbecrafting.flare.EntitySystem;
+import stream.alwaysbecrafting.flare.GameEngine;
 import stream.alwaysbecrafting.septembersun.component.PositionComponent;
 import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
 
@@ -39,19 +40,15 @@ public class SpriteRenderSystem extends EntitySystem {
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void onHandleEntity( GameEngine engine, long entityId, float deltaTime ) {
-		PositionComponent positionComp = engine.getComponent(
-				entityId,
-				PositionComponent.class );
+	@Override protected void onHandleEntity( Entity entity, float deltaTime ) {
+		PositionComponent positionComp = entity.get( PositionComponent.class );
 
-		SpriteComponent spriteComp = engine.getComponent(
-				entityId,
-				SpriteComponent.class );
+		SpriteComponent spriteComp = entity.get( SpriteComponent.class );
 
 		batcher.draw(
 				spriteComp.sprite,
-				positionComp.position.x,
-				positionComp.position.y );
+				positionComp.x,
+				positionComp.y );
 	}
 
 	//--------------------------------------------------------------------------

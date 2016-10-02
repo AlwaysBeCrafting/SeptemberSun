@@ -1,22 +1,11 @@
 package stream.alwaysbecrafting.septembersun.component;
 
 //==============================================================================
-public class VelocityComponent {
+public class PhysicalAttributesComponent {
 	//--------------------------------------------------------------------------
 
-	public float h;
-	public float v;
-
-	//--------------------------------------------------------------------------
-
-	public VelocityComponent() {}
-
-	//--------------------------------------------------------------------------
-
-	public VelocityComponent( float h, float v ) {
-		this.h = h;
-		this.v = v;
-	}
+	public float friction = 0.9f;
+	public float weight = 1;
 
 	//--------------------------------------------------------------------------
 }
