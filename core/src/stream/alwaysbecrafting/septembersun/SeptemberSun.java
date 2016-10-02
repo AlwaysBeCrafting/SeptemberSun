@@ -48,9 +48,8 @@ public class SeptemberSun extends ApplicationAdapter {
 				new VelocityComponent( 1, 0 ),
 				new SpriteComponent( tex ));
 
-		engine.add(
-				playerCharacter,
-				physicsCharacter );
+		engine.add( playerCharacter );
+		engine.add( physicsCharacter );
 	}
 
 	//--------------------------------------------------------------------------
