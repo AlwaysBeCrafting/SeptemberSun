@@ -1,6 +1,7 @@
 package stream.alwaysbecrafting.septembersun.system;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Matrix4;
 
 import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.EntitySystem;
@@ -12,20 +13,15 @@ import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
 public class SpriteRenderSystem extends EntitySystem {
 	//--------------------------------------------------------------------------
 
-	private SpriteBatch batcher;
+	private SpriteBatch batcher = new SpriteBatch();
 
 	//--------------------------------------------------------------------------
 
-	public SpriteRenderSystem() {
+	public SpriteRenderSystem( Matrix4 projection ) {
+		batcher.setProjectionMatrix( projection );
 		requireAll(
 				PositionComponent.class,
 				SpriteComponent.class );
-	}
-
-	//--------------------------------------------------------------------------
-
-	@Override public void onStart( GameEngine engine ) {
-		batcher = new SpriteBatch();
 	}
 
 	//--------------------------------------------------------------------------
