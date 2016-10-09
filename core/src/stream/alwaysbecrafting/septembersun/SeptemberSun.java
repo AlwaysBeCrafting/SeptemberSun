@@ -6,15 +6,15 @@ import com.badlogic.gdx.math.Matrix4;
 
 import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.GameEngine;
-import stream.alwaysbecrafting.septembersun.component.PhysicalAttributesComponent;
-import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
-import stream.alwaysbecrafting.septembersun.component.PositionComponent;
-import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
-import stream.alwaysbecrafting.septembersun.component.VelocityComponent;
-import stream.alwaysbecrafting.septembersun.system.BackgroundRenderSystem;
-import stream.alwaysbecrafting.septembersun.system.PhysicsSystem;
-import stream.alwaysbecrafting.septembersun.system.PlayerInputSystem;
-import stream.alwaysbecrafting.septembersun.system.SpriteRenderSystem;
+import stream.alwaysbecrafting.septembersun.component.physics.PhysicalAttributesComponent;
+import stream.alwaysbecrafting.septembersun.component.input.PlayerControllerComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
+import stream.alwaysbecrafting.septembersun.component.render.SpriteComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.VelocityComponent;
+import stream.alwaysbecrafting.septembersun.system.render.BackgroundRenderSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.PhysicsSystem;
+import stream.alwaysbecrafting.septembersun.system.input.PlayerInputSystem;
+import stream.alwaysbecrafting.septembersun.system.render.SpriteRenderSystem;
 
 
 //==============================================================================
