@@ -11,7 +11,8 @@ public class CollisionComponent {
 
 	public Set<Entity> collisions = new LinkedHashSet<>();
 
-	public int layers = 0b1;
+	public int activeLayers = 0b0;
+	public int passiveLayers = 0b1;
 
 	//--------------------------------------------------------------------------
 
@@ -19,8 +20,9 @@ public class CollisionComponent {
 
 	//--------------------------------------------------------------------------
 
-	public CollisionComponent( int layers ) {
-		this.layers = layers;
+	public CollisionComponent( int activeLayers, int passiveLayers ) {
+		this.activeLayers = activeLayers;
+		this.passiveLayers = passiveLayers;
 	}
 
 	//--------------------------------------------------------------------------
