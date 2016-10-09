@@ -1,4 +1,4 @@
-package stream.alwaysbecrafting.septembersun.system;
+package stream.alwaysbecrafting.septembersun.system.render;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Matrix4;
@@ -6,8 +6,8 @@ import com.badlogic.gdx.math.Matrix4;
 import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.EntitySystem;
 import stream.alwaysbecrafting.flare.GameEngine;
-import stream.alwaysbecrafting.septembersun.component.PositionComponent;
-import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
+import stream.alwaysbecrafting.septembersun.component.render.SpriteComponent;
 
 //==============================================================================
 public class SpriteRenderSystem extends EntitySystem {

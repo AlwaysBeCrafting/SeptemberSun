@@ -1,11 +1,16 @@
-package stream.alwaysbecrafting.septembersun.component;
+package stream.alwaysbecrafting.septembersun.component.render;
+
+import com.badlogic.gdx.graphics.Texture;
 
 //==============================================================================
-public class PhysicalAttributesComponent {
+public class SpriteComponent {
 	//--------------------------------------------------------------------------
 
-	public float friction = 0.9f;
-	public float weight = 1;
+	public Texture sprite;
+
+	//--------------------------------------------------------------------------
+
+	public SpriteComponent( Texture tex ) { sprite = tex; }
 
 	//--------------------------------------------------------------------------
 }
