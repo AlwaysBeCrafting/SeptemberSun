@@ -5,11 +5,11 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.math.Matrix4;
 
 import stream.alwaysbecrafting.flare.GameEngine;
-import stream.alwaysbecrafting.septembersun.system.BackgroundRenderSystem;
 import stream.alwaysbecrafting.septembersun.system.BoundsRenderSystem;
-import stream.alwaysbecrafting.septembersun.system.PhysicsSystem;
-import stream.alwaysbecrafting.septembersun.system.PlayerInputSystem;
-import stream.alwaysbecrafting.septembersun.system.SpriteRenderSystem;
+import stream.alwaysbecrafting.septembersun.system.input.PlayerInputSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.PhysicsSystem;
+import stream.alwaysbecrafting.septembersun.system.render.BackgroundRenderSystem;
+import stream.alwaysbecrafting.septembersun.system.render.SpriteRenderSystem;
 import stream.alwaysbecrafting.septembersun.util.Entities;
 
 

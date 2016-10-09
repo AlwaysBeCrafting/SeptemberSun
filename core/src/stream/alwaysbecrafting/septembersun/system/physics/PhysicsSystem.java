@@ -1,10 +1,10 @@
-package stream.alwaysbecrafting.septembersun.system;
+package stream.alwaysbecrafting.septembersun.system.physics;
 
 import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.EntitySystem;
-import stream.alwaysbecrafting.septembersun.component.PhysicalAttributesComponent;
-import stream.alwaysbecrafting.septembersun.component.PositionComponent;
-import stream.alwaysbecrafting.septembersun.component.VelocityComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PhysicalAttributesComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.VelocityComponent;
 
 //==============================================================================
 public class PhysicsSystem extends EntitySystem {

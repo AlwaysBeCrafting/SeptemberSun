@@ -1,16 +1,22 @@
-package stream.alwaysbecrafting.septembersun.component;
-
-import com.badlogic.gdx.graphics.Texture;
+package stream.alwaysbecrafting.septembersun.component.physics;
 
 //==============================================================================
-public class SpriteComponent {
+public class PositionComponent {
 	//--------------------------------------------------------------------------
 
-	public Texture sprite;
+	public float x;
+	public float y;
 
 	//--------------------------------------------------------------------------
 
-	public SpriteComponent( Texture tex ) { sprite = tex; }
+	public PositionComponent() {}
+
+	//--------------------------------------------------------------------------
+
+	public PositionComponent( float x, float y ) {
+		this.x = x;
+		this.y = y;
+	}
 
 	//--------------------------------------------------------------------------
 }

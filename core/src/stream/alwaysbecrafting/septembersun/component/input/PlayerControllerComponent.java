@@ -1,4 +1,4 @@
-package stream.alwaysbecrafting.septembersun.component;
+package stream.alwaysbecrafting.septembersun.component.input;
 
 import com.badlogic.gdx.Input;
 

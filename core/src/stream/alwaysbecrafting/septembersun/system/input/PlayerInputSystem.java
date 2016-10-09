@@ -1,4 +1,4 @@
-package stream.alwaysbecrafting.septembersun.system;
+package stream.alwaysbecrafting.septembersun.system.input;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
@@ -9,8 +9,8 @@ import java.util.Set;
 import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.EntitySystem;
 import stream.alwaysbecrafting.flare.GameEngine;
-import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
-import stream.alwaysbecrafting.septembersun.component.PositionComponent;
+import stream.alwaysbecrafting.septembersun.component.input.PlayerControllerComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
 import stream.alwaysbecrafting.septembersun.util.Log;
 
 //==============================================================================
