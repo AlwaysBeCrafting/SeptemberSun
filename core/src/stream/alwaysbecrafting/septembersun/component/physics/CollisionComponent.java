@@ -1,19 +1,26 @@
-package stream.alwaysbecrafting.septembersun.component;
+package stream.alwaysbecrafting.septembersun.component.physics;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import stream.alwaysbecrafting.flare.Entity;
 
 //==============================================================================
-public class ColorFillComponent {
+public class CollisionComponent {
 	//--------------------------------------------------------------------------
 
-	public int color;
+	public Set<Entity> collisions = new LinkedHashSet<>();
+
+	public int layers = 0b1;
 
 	//--------------------------------------------------------------------------
 
-	public ColorFillComponent() {}
+	public CollisionComponent() {}
 
 	//--------------------------------------------------------------------------
 
-	public ColorFillComponent( int color ) {
-		this.color = color;
+	public CollisionComponent( int layers ) {
+		this.layers = layers;
 	}
 
 	//--------------------------------------------------------------------------

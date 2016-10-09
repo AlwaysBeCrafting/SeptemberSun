@@ -3,14 +3,14 @@ package stream.alwaysbecrafting.septembersun.util;
 import com.badlogic.gdx.graphics.Texture;
 
 import stream.alwaysbecrafting.flare.Entity;
-import stream.alwaysbecrafting.septembersun.component.BoundingBoxComponent;
-import stream.alwaysbecrafting.septembersun.component.CollisionComponent;
-import stream.alwaysbecrafting.septembersun.component.ColorFillComponent;
-import stream.alwaysbecrafting.septembersun.component.PhysicalAttributesComponent;
-import stream.alwaysbecrafting.septembersun.component.PlayerControllerComponent;
-import stream.alwaysbecrafting.septembersun.component.PositionComponent;
-import stream.alwaysbecrafting.septembersun.component.SpriteComponent;
-import stream.alwaysbecrafting.septembersun.component.VelocityComponent;
+import stream.alwaysbecrafting.septembersun.component.input.PlayerControllerComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.BoundingBoxComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.CollisionComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PhysicalAttributesComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.VelocityComponent;
+import stream.alwaysbecrafting.septembersun.component.render.ColorFillComponent;
+import stream.alwaysbecrafting.septembersun.component.render.SpriteComponent;
 
 //==============================================================================
 public abstract class Entities {

@@ -1,4 +1,4 @@
-package stream.alwaysbecrafting.septembersun.component;
+package stream.alwaysbecrafting.septembersun.component.physics;
 
 import com.badlogic.gdx.math.Rectangle;
 

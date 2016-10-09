@@ -1,4 +1,4 @@
-package stream.alwaysbecrafting.septembersun.system;
+package stream.alwaysbecrafting.septembersun.system.render;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Matrix4;
@@ -7,8 +7,8 @@ import com.badlogic.gdx.math.Rectangle;
 import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.EntitySystem;
 import stream.alwaysbecrafting.flare.GameEngine;
-import stream.alwaysbecrafting.septembersun.component.BoundingBoxComponent;
-import stream.alwaysbecrafting.septembersun.component.ColorFillComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.BoundingBoxComponent;
+import stream.alwaysbecrafting.septembersun.component.render.ColorFillComponent;
 import stream.alwaysbecrafting.septembersun.util.Colors;
 
 //==============================================================================
