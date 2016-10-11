@@ -13,7 +13,7 @@ import static stream.alwaysbecrafting.septembersun.util.Colors.Solarized.BASE03;
 public class BackgroundRenderSystem extends GameSystem {
 	//--------------------------------------------------------------------------
 
-	@Override public void onUpdate( GameEngine engine, float deltaTime ) {
+	@Override public void onUpdate( GameEngine engine, double deltaTime ) {
 		super.onUpdate( engine, deltaTime );
 
 		Gdx.gl.glClearColor(

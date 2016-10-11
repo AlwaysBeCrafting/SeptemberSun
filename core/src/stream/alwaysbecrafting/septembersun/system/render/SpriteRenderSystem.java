@@ -19,14 +19,19 @@ public class SpriteRenderSystem extends EntitySystem {
 
 	public SpriteRenderSystem( Matrix4 projection ) {
 		batcher.setProjectionMatrix( projection );
-		requireAll(
+	}
+
+	//--------------------------------------------------------------------------
+
+	@Override protected boolean acceptEntity( Entity entity ) {
+		return entity.hasAll(
 				PositionComponent.class,
 				SpriteComponent.class );
 	}
 
 	//--------------------------------------------------------------------------
 
-	@Override public void onUpdate( GameEngine engine, float deltaTime ) {
+	@Override public void onUpdate( GameEngine engine, double deltaTime ) {
 		batcher.begin();
 
 		super.onUpdate( engine, deltaTime );
@@ -36,7 +41,7 @@ public class SpriteRenderSystem extends EntitySystem {
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void onHandleEntity( Entity entity, float deltaTime ) {
+	@Override protected void onHandleEntity( Entity entity, double deltaTime ) {
 		PositionComponent positionComp = entity.get( PositionComponent.class );
 
 		SpriteComponent spriteComp = entity.get( SpriteComponent.class );
@@ -46,7 +51,5 @@ public class SpriteRenderSystem extends EntitySystem {
 				positionComp.x,
 				positionComp.y );
 	}
-
-	//--------------------------------------------------------------------------
 }
 //------------------------------------------------------------------------------
