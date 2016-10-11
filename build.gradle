@@ -49,7 +49,7 @@ project(":core") {
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
 
-        compile "stream.alwaysbecrafting:flare:1.0.0-alpha1"
+        compile "stream.alwaysbecrafting:flare:1.0.0-alpha2"
     }
 }
 

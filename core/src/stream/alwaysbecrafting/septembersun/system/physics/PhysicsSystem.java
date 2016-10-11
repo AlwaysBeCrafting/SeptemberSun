@@ -14,15 +14,15 @@ public class PhysicsSystem extends EntitySystem {
 
 	//--------------------------------------------------------------------------
 
-	public PhysicsSystem() {
-		requireAll(
+	@Override protected boolean acceptEntity( Entity entity ) {
+		return entity.hasAll(
 				PositionComponent.class,
 				VelocityComponent.class );
 	}
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void onHandleEntity( Entity entity, float deltaTime ) {
+	@Override protected void onHandleEntity( Entity entity, double deltaTime ) {
 		PhysicalAttributesComponent attribs = entity.get(PhysicalAttributesComponent.class );
 		PositionComponent position = entity.get( PositionComponent.class );
 		VelocityComponent velocity = entity.get( VelocityComponent.class );

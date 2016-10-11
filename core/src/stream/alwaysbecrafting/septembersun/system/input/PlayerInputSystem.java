@@ -22,8 +22,8 @@ public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 
 	//--------------------------------------------------------------------------
 
-	public PlayerInputSystem() {
-		requireAll(
+	@Override protected boolean acceptEntity( Entity entity ) {
+		return entity.hasAll(
 				PlayerControllerComponent.class,
 				PositionComponent.class );
 	}
@@ -37,7 +37,7 @@ public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 
 	//--------------------------------------------------------------------------
 
-	@Override public void onUpdate( GameEngine engine, float deltaTime ) {
+	@Override public void onUpdate( GameEngine engine, double deltaTime ) {
 		super.onUpdate( engine, deltaTime );
 
 		KEYS_PRESSED.clear();
@@ -46,7 +46,7 @@ public class PlayerInputSystem extends EntitySystem implements InputProcessor {
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void onHandleEntity( Entity entity, float deltaTime ) {
+	@Override protected void onHandleEntity( Entity entity, double deltaTime ) {
 		PlayerControllerComponent controllerComp = entity.get( PlayerControllerComponent.class );
 		PositionComponent positionComp = entity.get( PositionComponent.class );
 
