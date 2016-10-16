@@ -5,9 +5,10 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.math.Matrix4;
 
 import stream.alwaysbecrafting.flare.GameEngine;
+import stream.alwaysbecrafting.septembersun.system.physics.MovementSystem;
 import stream.alwaysbecrafting.septembersun.system.render.BoundsRenderSystem;
 import stream.alwaysbecrafting.septembersun.system.input.PlayerInputSystem;
-import stream.alwaysbecrafting.septembersun.system.physics.PhysicsSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.GravitySystem;
 import stream.alwaysbecrafting.septembersun.system.render.BackgroundRenderSystem;
 import stream.alwaysbecrafting.septembersun.system.render.SpriteRenderSystem;
 import stream.alwaysbecrafting.septembersun.util.Entities;
@@ -33,7 +34,8 @@ public class SeptemberSun extends ApplicationAdapter {
 
 		engine.add( new BackgroundRenderSystem() );
 		engine.add( new PlayerInputSystem() );
-		engine.add( new PhysicsSystem() );
+		engine.add( new GravitySystem() );
+		engine.add( new MovementSystem() );
 		engine.add( new SpriteRenderSystem( projection ));
 		engine.add( new BoundsRenderSystem( projection ));
 

@@ -1,11 +1,16 @@
 package stream.alwaysbecrafting.septembersun.component.physics;
 
 //==============================================================================
-public class PhysicalAttributesComponent {
+public class GravityComponent {
 	//--------------------------------------------------------------------------
 
-	public float friction = 0.9f;
-	public float weight = 1;
+	public double strength = 1;
+
+	//--------------------------------------------------------------------------
+
+	public GravityComponent( double strength ) {
+		this.strength = strength;
+	}
 
 	//--------------------------------------------------------------------------
 }
