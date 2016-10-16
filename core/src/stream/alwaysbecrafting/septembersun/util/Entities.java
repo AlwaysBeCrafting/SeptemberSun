@@ -23,7 +23,9 @@ public abstract class Entities {
 
 				new PhysicalAttributesComponent(),
 				new VelocityComponent( 1, 0 ),
-				new CollisionComponent( 0b111 ),
+				new CollisionComponent(
+						new String[] { "wall", "enemyBullet" },
+						new String[] { "player" } ),
 
 				new SpriteComponent( new Texture( "fella.png" )),
 
@@ -36,7 +38,9 @@ public abstract class Entities {
 		return new Entity(
 				new BoundingBoxComponent( x, y, w, h ),
 
-				new CollisionComponent( 0b001 ),
+				new CollisionComponent(
+						new String[0],
+						new String[] { "wall" } ),
 				new ColorFillComponent( Colors.Solarized.BASE1 ));
 	}
 

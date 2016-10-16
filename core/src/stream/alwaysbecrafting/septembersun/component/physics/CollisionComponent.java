@@ -1,5 +1,7 @@
 package stream.alwaysbecrafting.septembersun.component.physics;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -10,9 +12,8 @@ public class CollisionComponent {
 	//--------------------------------------------------------------------------
 
 	public Set<Entity> collisions = new LinkedHashSet<>();
-
-	public int activeLayers = 0b0;
-	public int passiveLayers = 0b1;
+	public Set<String> activeLayers = new HashSet<>();
+	public Set<String> passiveLayers = new HashSet<>();
 
 	//--------------------------------------------------------------------------
 
@@ -20,9 +21,9 @@ public class CollisionComponent {
 
 	//--------------------------------------------------------------------------
 
-	public CollisionComponent( int activeLayers, int passiveLayers ) {
-		this.activeLayers = activeLayers;
-		this.passiveLayers = passiveLayers;
+	public CollisionComponent( String[] activeLayers, String[] passiveLayers ) {
+		Collections.addAll( this.activeLayers, activeLayers );
+		Collections.addAll( this.passiveLayers, passiveLayers );
 	}
 
 	//--------------------------------------------------------------------------
