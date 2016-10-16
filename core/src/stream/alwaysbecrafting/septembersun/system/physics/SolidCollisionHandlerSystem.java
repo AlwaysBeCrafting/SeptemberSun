@@ -25,8 +25,6 @@ public class SolidCollisionHandlerSystem extends EntitySystem {
 		collisionComp.collisions.forEach( collision -> {
 			Log.d( "A collision has occured!" );
 		} );
-
-		collisionComp.collisions.clear();
 	}
 
 	//--------------------------------------------------------------------------

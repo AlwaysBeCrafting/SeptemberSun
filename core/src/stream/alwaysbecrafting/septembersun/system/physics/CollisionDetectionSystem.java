@@ -29,6 +29,8 @@ public class CollisionDetectionSystem extends EntitySystem {
 		CollisionComponent collisionComp = entity.get( CollisionComponent.class );
 		BoundingBoxComponent bboxComp = entity.get( BoundingBoxComponent.class );
 
+		collisionComp.collisions.clear();
+
 		entity.getEngine().entityStream()
 				.filter( other -> other != entity )
 				.filter( other -> other.has( CollisionComponent.class ))
