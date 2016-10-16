@@ -21,15 +21,19 @@ public class BoundsRenderSystem extends EntitySystem {
 
 	public BoundsRenderSystem( Matrix4 projection ) {
 		SHAPE.setProjectionMatrix( projection );
+	}
 
-		requireAll(
+	//--------------------------------------------------------------------------
+
+	@Override protected boolean acceptEntity( Entity entity ) {
+		return entity.hasAll(
 				BoundingBoxComponent.class,
 				ColorFillComponent.class );
 	}
 
 	//--------------------------------------------------------------------------
 
-	@Override public void onUpdate( GameEngine engine, float deltaTime ) {
+	@Override public void onUpdate( GameEngine engine, double deltaTime ) {
 		SHAPE.begin( ShapeRenderer.ShapeType.Filled );
 
 		super.onUpdate( engine, deltaTime );
@@ -39,7 +43,7 @@ public class BoundsRenderSystem extends EntitySystem {
 
 	//--------------------------------------------------------------------------
 
-	@Override protected void onHandleEntity( Entity entity, float deltaTime ) {
+	@Override protected void onHandleEntity( Entity entity, double deltaTime ) {
 		Rectangle box = entity.get( BoundingBoxComponent.class ).rect;
 		int color = entity.get( ColorFillComponent.class ).color;
 
