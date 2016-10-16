@@ -7,6 +7,7 @@ import stream.alwaysbecrafting.flare.EntitySystem;
 import stream.alwaysbecrafting.septembersun.component.physics.BoundingBoxComponent;
 import stream.alwaysbecrafting.septembersun.component.physics.CollisionComponent;
 import stream.alwaysbecrafting.septembersun.data.Collision;
+import stream.alwaysbecrafting.septembersun.util.Log;
 
 //==============================================================================
 public class CollisionDetectionSystem extends EntitySystem {
@@ -37,6 +38,8 @@ public class CollisionDetectionSystem extends EntitySystem {
 				.filter( other -> other.get( BoundingBoxComponent.class ).intersects( bboxComp, INTERSECTION ))
 
 				.forEach( other -> {
+					Log.d( "Collide " + entity + " with " + other );
+
 					Collision c = new Collision();
 					int centerX = (int)( INTERSECTION.x + ( INTERSECTION.width / 2 ));
 					int centerY = (int)( INTERSECTION.y + ( INTERSECTION.height / 2 ));
