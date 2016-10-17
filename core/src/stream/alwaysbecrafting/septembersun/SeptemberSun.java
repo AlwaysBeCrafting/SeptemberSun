@@ -8,6 +8,7 @@ import stream.alwaysbecrafting.flare.GameEngine;
 import stream.alwaysbecrafting.septembersun.system.input.PlayerInputSystem;
 import stream.alwaysbecrafting.septembersun.system.physics.BoundingBoxPositioningSystem;
 import stream.alwaysbecrafting.septembersun.system.physics.CollisionDetectionSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.FrictionSystem;
 import stream.alwaysbecrafting.septembersun.system.physics.GravitySystem;
 import stream.alwaysbecrafting.septembersun.system.physics.MovementSystem;
 import stream.alwaysbecrafting.septembersun.system.physics.SolidCollisionHandlerSystem;
@@ -38,6 +39,7 @@ public class SeptemberSun extends ApplicationAdapter {
 		engine.add( new BackgroundRenderSystem() );
 		engine.add( new PlayerInputSystem() );
 		engine.add( new GravitySystem() );
+		engine.add( new FrictionSystem() );
 		engine.add( new MovementSystem() );
 		engine.add( new BoundingBoxPositioningSystem() );
 

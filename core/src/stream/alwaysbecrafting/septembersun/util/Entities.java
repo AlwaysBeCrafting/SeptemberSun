@@ -6,6 +6,7 @@ import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.septembersun.component.input.PlayerControllerComponent;
 import stream.alwaysbecrafting.septembersun.component.physics.BoundingBoxComponent;
 import stream.alwaysbecrafting.septembersun.component.physics.CollisionComponent;
+import stream.alwaysbecrafting.septembersun.component.physics.FrictionComponent;
 import stream.alwaysbecrafting.septembersun.component.physics.GravityComponent;
 import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
 import stream.alwaysbecrafting.septembersun.component.physics.VelocityComponent;
@@ -21,8 +22,9 @@ public abstract class Entities {
 				new PositionComponent( 50, 50 ),
 				new BoundingBoxComponent( 0, 0, 16, 16 ),
 
-				new VelocityComponent( 1, 0 ),
 				new GravityComponent( 1 ),
+				new FrictionComponent(),
+				new VelocityComponent( 1, 0 ),
 				new CollisionComponent(
 						new String[] { "wall", "enemyBullet" },
 						new String[] { "player" } ),
