@@ -1,20 +1,21 @@
 package stream.alwaysbecrafting.septembersun;
 
+
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Matrix4;
 
-import stream.alwaysbecrafting.flare.Entity;
 import stream.alwaysbecrafting.flare.GameEngine;
-import stream.alwaysbecrafting.septembersun.component.physics.PhysicalAttributesComponent;
-import stream.alwaysbecrafting.septembersun.component.input.PlayerControllerComponent;
-import stream.alwaysbecrafting.septembersun.component.physics.PositionComponent;
-import stream.alwaysbecrafting.septembersun.component.render.SpriteComponent;
-import stream.alwaysbecrafting.septembersun.component.physics.VelocityComponent;
-import stream.alwaysbecrafting.septembersun.system.render.BackgroundRenderSystem;
-import stream.alwaysbecrafting.septembersun.system.physics.PhysicsSystem;
 import stream.alwaysbecrafting.septembersun.system.input.PlayerInputSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.BoundingBoxPositioningSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.CollisionDetectionSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.FrictionSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.GravitySystem;
+import stream.alwaysbecrafting.septembersun.system.physics.MovementSystem;
+import stream.alwaysbecrafting.septembersun.system.physics.SolidCollisionHandlerSystem;
+import stream.alwaysbecrafting.septembersun.system.render.BackgroundRenderSystem;
+import stream.alwaysbecrafting.septembersun.system.render.BoundsRenderSystem;
 import stream.alwaysbecrafting.septembersun.system.render.SpriteRenderSystem;
+import stream.alwaysbecrafting.septembersun.util.Entities;
 
 
 //==============================================================================
@@ -37,25 +38,20 @@ public class SeptemberSun extends ApplicationAdapter {
 
 		engine.add( new BackgroundRenderSystem() );
 		engine.add( new PlayerInputSystem() );
-		engine.add( new PhysicsSystem() );
+		engine.add( new GravitySystem() );
+		engine.add( new FrictionSystem() );
+		engine.add( new MovementSystem() );
+		engine.add( new BoundingBoxPositioningSystem() );
+
+		engine.add( new CollisionDetectionSystem() );
+		engine.add( new SolidCollisionHandlerSystem() );
+
 		engine.add( new SpriteRenderSystem( projection ));
+		engine.add( new BoundsRenderSystem( projection ));
 
 
-		Texture tex = new Texture( "fella.png" );
-
-		Entity playerCharacter = new Entity(
-				new PositionComponent( 20, 20 ),
-				new SpriteComponent( tex ),
-				new PlayerControllerComponent() );
-
-		Entity physicsCharacter = new Entity(
-				new PhysicalAttributesComponent(),
-				new PositionComponent( 50, 50 ),
-				new VelocityComponent( 1, 0 ),
-				new SpriteComponent( tex ));
-
-		engine.add( playerCharacter );
-		engine.add( physicsCharacter );
+		engine.add( Entities.makePlayerCharacter() );
+		engine.add( Entities.makeWall( 0, 0, 320, 40 ));
 	}
 
 	//--------------------------------------------------------------------------
